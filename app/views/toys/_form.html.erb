@@ -1,0 +1,22 @@
+<%= form_for toy do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, class: "form-control" %>
+
+  <%= f.label :description %>
+  <%= f.text_area :description, class: "form-control" %>
+
+  <%= f.label :price %>
+  <%= f.number_field :price, class: "form-control" %>
+
+  <%= f.label :location %>
+  <%= f.text_field :location, class: "form-control" %>
+
+  <%= hidden_field_tag(:status, "available") %>
+
+  <%= f.submit "add toy", class: "btn btn-warning" %>
+<% end %>
+
+<!-- TO DO:
+€ to price
+add photo
+add category -->
