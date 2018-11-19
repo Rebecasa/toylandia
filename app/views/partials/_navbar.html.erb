@@ -1,27 +1,32 @@
 <div class="navbar-wagon">
-  <!-- Logo -->
+
+  <!-- Our logo -->
   <a href="/" class="navbar-wagon-brand">
-    <%= image_tag "logo.png", alt: "Toylandia", class:"img-circle" %>
+    <%= image_tag "logo.png", alt: "Toylandia", title: 'Rent toys', class:"img-circle" %>
   </a>
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
-
-    <a href="" class="navbar-wagon-item navbar-wagon-link">Toys</a>
-    <a href="" class="navbar-wagon-item navbar-wagon-link">Bookings</a>
-    <a href="" class="navbar-wagon-item navbar-wagon-link">Messages</a>
-
-    <!-- Profile picture with dropdown list -->
-    <div class="navbar-wagon-item">
-      <div class="dropdown">
-        <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
-        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-          <li><a href="#">Profile</a></li>
-          <li><a href="#">Dashboard</a></li>
-          <li><a href="#">Log Out</a></li>
-        </ul>
-      </div>
-    </div>
+    <!-- If user is logged in, possible actions are: Index Toys, Index Bookings, Show User, Log out-->
+    <% if user_signed_in? %>
+      <a href="" class="navbar-wagon-item navbar-wagon-link">Toys</a>
+      <a href="" class="navbar-wagon-item navbar-wagon-link">Bookings</a>
+        <!-- Profile picture with dropdown list -->
+        <div class="navbar-wagon-item">
+          <div class="dropdown">
+            <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
+            <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+              <li><a href="#">Profile</a></li>
+              <li><a href="#">Log Out</a></li>
+            </ul>
+          </div>
+        </div>
+    <!-- If user is not logged in, possible actions are: Index Toys, New User -->
+      <% else %>
+        <a href="" class="navbar-wagon-item navbar-wagon-link">Toys</a>
+        <a href="" class="navbar-wagon-item navbar-wagon-link">Log in</a>
+        <a href="" class="navbar-wagon-item navbar-wagon-link">Create an account</a>
+      <% end %>
   </div>
 
   <!-- Dropdown appearing on mobile only -->
@@ -29,9 +34,18 @@
     <div class="dropdown">
       <i class="fas fa-bars dropdown-toggle" data-toggle="dropdown" role="button"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><a href="#">Toys</a></li>
-        <li><a href="#">Bookings</a></li>
-        <li><a href="#">Messagese</a></li>
+
+        <% if user_signed_in? %>
+          <li><a href="#">Toys</a></li>
+          <li><a href="#">Bookings</a></li>
+          <li><a href="#">Profile</a></li>
+          <li><a href="#">Log out</a></li>
+        <% else  %>
+          <li><a href="#">Toys</a></li>
+          <li><a href="#">Log in</a></li>
+          <li><a href="#">Create account</a></li>
+        <% end %>
+
       </ul>
     </div>
   </div>
