@@ -11,6 +11,7 @@ class BookingsController < ApplicationController
   def new
     @toy = Toy.find(params[:toy_id])
     @booking = Booking.new
+    @booking.toy = @toy
   end
 
   def create
@@ -18,7 +19,7 @@ class BookingsController < ApplicationController
     @user = User.find(params[:user_id])
     @booking = Booking.new(booking_params)
     @booking.toy = @toy
-    @booking.user = @current_user
+    @booking.user = current_user
   end
   def delete
   end
