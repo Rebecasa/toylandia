@@ -11,7 +11,10 @@
   <%= f.label :location %>
   <%= f.text_field :location, class: "form-control" %>
 
-  <%= hidden_field_tag(:status, "available") %>
+  <%= f.label :category %>
+  <%= f.select :category, ['cars', 'cuddly', 'creepy', 'educational', 'other'], class: "form-control" %>
+
+  <%= hidden_field_tag :status, "available" %>
 
   <%= f.submit class: "btn btn-warning" %>
 <% end %>
