@@ -12,6 +12,7 @@
   </head>
   <body>
     <%= render '/partials/navbar' %>
+    <%= render '/devise/shared/flashes' %>
     <%= yield %>
     <%= render '/partials/footer' %>
     <%= javascript_include_tag 'application' %>
