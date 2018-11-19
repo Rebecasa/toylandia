@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2018_11_19_145133) do
-=======
-ActiveRecord::Schema.define(version: 2018_11_19_140328) do
->>>>>>> 773ab1d610dd063150c779e7aaf739b4e1ba949a
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,10 +35,7 @@ ActiveRecord::Schema.define(version: 2018_11_19_140328) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-<<<<<<< HEAD
     t.string "name"
-=======
->>>>>>> 773ab1d610dd063150c779e7aaf739b4e1ba949a
     t.index ["user_id"], name: "index_toys_on_user_id"
   end
 
