@@ -1,7 +1,7 @@
 <h1>Rent one of these toys:</h1>
 
 <% @toys.each do |toy| %>
-  <%= toy.name %>
+  <%= link_to toy.name, toy_path(toy) %>
 <% end %>
 
 <%= link_to 'add a new toy', new_toy_path %>

@@ -14,7 +14,7 @@ class ToysController < ApplicationController
   def create
     @toy = Toy.new(toy_params)
     @toy.user = current_user
-    if @toy.save!
+    if @toy.save
       redirect_to @toy
     else
       render 'new'
@@ -22,9 +22,17 @@ class ToysController < ApplicationController
   end
 
   def edit
+    @toy = Toy.find(params[:id])
   end
 
   def update
+    @toy = Toy.find(params[:id])
+    @toy.update(toy_params)
+    if @toy.save
+      redirect_to @toy
+    else
+      render 'edit'
+    end
   end
 
   private
