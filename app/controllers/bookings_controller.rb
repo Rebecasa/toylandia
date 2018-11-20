@@ -28,6 +28,8 @@ class BookingsController < ApplicationController
     redirect_to bookings_path
   end
 
+  private
+
   def booking_params
     params.require(:booking).permit(:toy_id, :user_id, :start_date, :end_date)
   end
