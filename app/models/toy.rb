@@ -4,6 +4,7 @@ class Toy < ApplicationRecord
   validates :name, presence: true
   validates :description, presence: true
   validates :price, presence: true
+  validates :location, presence: true
   validates :category, inclusion: {
     in: %w(cars cuddly creepy educational other)
   }
