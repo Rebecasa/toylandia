@@ -1,17 +1,34 @@
 <div class="toy-card">
-  <h1><%= @toy.name %></h1>
 
-  <p><%= number_to_currency(@toy.price, unit: "€", separator: ",", delimiter: ".", format: "%n %u") %></p>
+  <div class="row">
+    <div class="col-xs-6 toy-info">
+      <h1><%= @toy.name %></h1>
 
-  <p><%= @toy.description %></p>
+      <p class="toy-price"><font size="-1"><i class="fas fa-coins"></i></font> <%= number_to_currency(@toy.price, unit: "€", separator: ",", delimiter: ".", format: "%n %u") %></p>
 
-  <%= cl_image_tag @toy.photo, height: 200, crop: :fill %>
+      <p class="toy-category"><i class="fas fa-tags"></i> <%= @toy.category %></p>
+    </div>
 
-  <%= link_to edit_toy_path(@toy) do %>
-    <i class="far fa-edit toy-card-footer"></i>
-  <% end %>
-  <br>
-  <%= link_to toys_path do %>
-    <i class="fas fa-long-arrow-alt-left toy-card-footer"></i>
-  <% end %>
+    <div class="col-xs-6 toy-photo-container">
+      <%= cl_image_tag @toy.photo, height: 200, crop: :fill, class: "toy-photo" %>
+    </div>
+
+    <div class="toy-description">
+      <p><%= @toy.description %></p>
+      <%= link_to "Book this toy", new_toy_booking_path(@toy),class: "button-form"%>
+    </div>
+  </div>
+
+  <div class="toy-card-footer">
+    <div>
+      <% if current_user == @toy.user %>
+        <%= link_to edit_toy_path(@toy) do %>
+          <i class="far fa-edit"></i>
+        <% end %>
+      <% end %>
+    </div>
+    <%= link_to toys_path do %>
+        <i class="fas fa-long-arrow-alt-left"></i>
+    <% end %>
+
 </div>

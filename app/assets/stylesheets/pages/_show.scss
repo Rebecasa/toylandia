@@ -1,7 +1,51 @@
 .toy-card {
   background: white;
   border-radius: 15px;
-  box-shadow: 5px 5px 25px rgba(0,0,0,0.3);
+  box-shadow: 3px 3px 28px rgba(0, 0, 0, 0.2);
   max-width: 60vw;
-  margin-left: 30px;
+  min-height: 50vh;
+  margin-top: 40px;
+  margin-left: 40px;
+  position: relative;
 }
+
+.toy-card-footer {
+  position: absolute;
+  left: 5px;
+  bottom: 5px;
+  line-height: 1.2;
+  display: flex;
+  flex-direction: column;
+  align-items: space-around;
+  margin: 5px 10px;
+}
+
+.toy-photo {
+  border-top: 2px solid $blue;
+  border-bottom: 2px solid $blue;
+  border-radius: 15px;
+  box-shadow: 2px 2px 25px rgba(0, 0, 0, 0.1);
+}
+
+.toy-photo-container {
+  padding: 0;
+  margin-top: 20px;
+}
+
+.toy-info {
+  text-align: left;
+  padding: 0;
+  padding-left: 50px;
+  .toy-category {
+    color: $mid-gray;
+    font-size: 12px;
+  }
+}
+
+.toy-description {
+  margin-top: 20px;
+  text-align: left;
+  padding: 20px 50px;
+}
+
+
