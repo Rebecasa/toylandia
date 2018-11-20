@@ -1,6 +1,6 @@
 <h1>Rent one of these toys:</h1>
 
-<% @toys.each do |toy| %>
+<% @toys.user.each do |toy| %>
   <%= link_to toy.name, toy_path(toy) %>
 <% end %>
 
