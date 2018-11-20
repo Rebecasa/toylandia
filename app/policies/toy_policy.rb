@@ -18,4 +18,8 @@ class ToyPolicy < ApplicationPolicy
     return true
   end
 
+  def update?
+    # Only the user that has created the toy can edit it
+    record.user == user
+  end
 end

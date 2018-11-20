@@ -1,4 +1,5 @@
 class ToysController < ApplicationController
+  # Any visitor can access the Toys index and the individual show pages
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
@@ -29,11 +30,13 @@ class ToysController < ApplicationController
 
   def edit
     @toy = Toy.find(params[:id])
+    authorize @toy
   end
 
   def update
     @toy = Toy.find(params[:id])
     @toy.update(toy_params)
+    authorize @toy
     if @toy.save
       redirect_to @toy
     else
