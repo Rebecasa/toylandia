@@ -4,9 +4,11 @@
   box-shadow: 3px 3px 28px rgba(0, 0, 0, 0.2);
   max-width: 60vw;
   min-height: 50vh;
+  max-height: calc(100vh - 90px);
   margin-top: 40px;
   margin-left: 40px;
   position: relative;
+  overflow: scroll;
 }
 
 .toy-card-footer {
