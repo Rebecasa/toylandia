@@ -32,4 +32,3 @@ conejito.remote_photo_url = 'https://res.cloudinary.com/blueolive/image/upload/v
 conejito.save!
 
 puts 'Finished!'
-
