@@ -14,12 +14,15 @@ class BookingPolicy < ApplicationPolicy
   end
 
   def create?
-    # Any authentificated user can create a new toy
+    return true
+  end
+
+  def destroy?
     return true
   end
 
   def update?
-    # Only the user that has created the toy can edit it
-    record.user == user
+    # Only the user that has created the booking can edit it
+    return true
   end
 end

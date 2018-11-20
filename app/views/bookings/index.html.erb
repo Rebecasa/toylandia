@@ -1,10 +1,10 @@
-<div class="diff-booking">
+<div id="diff-booking">
   <div class="bookings">
     <h1>These are your bookings:</h1>
     <% @bookings.each do |booking| %>
       <% if booking.user == current_user %>
 
-    <p><%= booking.toy.name %></p>
+    <p><%= booking.toy.name.capitalize %></p>
     <p><%= " From: #{booking.start_date}  To: #{booking.end_date}" %></p>
       <% price = (booking.end_date - booking.start_date + 1).to_i * booking.toy.price.to_i %>
       <p><%= price %></p>
@@ -20,7 +20,7 @@
     <% @bookings.each do |booking| %>
       <% if booking.toy.user == current_user %>
 
-    <p><%= booking.toy.name %></p>
+    <p><%= booking.toy.name.capitalize %></p>
     <p><%= " From: #{booking.start_date}  To: #{booking.end_date}" %></p>
       <% price = (booking.end_date - booking.start_date + 1).to_i * booking.toy.price.to_i %>
       <p><%= price %></p>
