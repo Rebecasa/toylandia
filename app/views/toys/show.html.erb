@@ -1,15 +1,17 @@
-<h1><%= @toy.name %></h1>
+<div class="toy-card">
+  <h1><%= @toy.name %></h1>
 
-<p><%= number_to_currency(@toy.price, unit: "€", separator: ",", delimiter: ".", format: "%n %u") %></p>
+  <p><%= number_to_currency(@toy.price, unit: "€", separator: ",", delimiter: ".", format: "%n %u") %></p>
 
-<p><%= @toy.description %></p>
+  <p><%= @toy.description %></p>
 
-<%= cl_image_tag @toy.photo, height: 200, crop: :fill %>
+  <%= cl_image_tag @toy.photo, height: 200, crop: :fill %>
 
-<%= link_to edit_toy_path(@toy) do %>
-  <i class="far fa-edit"></i>
-<% end %>
-<br>
-<%= link_to toys_path do %>
-  <i class="fas fa-long-arrow-alt-left"></i>
-<% end %>
+  <%= link_to edit_toy_path(@toy) do %>
+    <i class="far fa-edit toy-card-footer"></i>
+  <% end %>
+  <br>
+  <%= link_to toys_path do %>
+    <i class="fas fa-long-arrow-alt-left toy-card-footer"></i>
+  <% end %>
+</div>
