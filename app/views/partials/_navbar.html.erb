@@ -10,7 +10,7 @@
     <!-- If user is logged in, possible actions are: Index Toys, Index Bookings, Show User, Log out-->
     <% if user_signed_in? %>
       <a href="/toys" class="navbar-wagon-item navbar-wagon-link">Toys</a>
-      <a href="/toys/bookings" class="navbar-wagon-item navbar-wagon-link">Bookings</a>
+      <a href="/bookings" class="navbar-wagon-item navbar-wagon-link">Bookings</a>
       <a href="/toys/new" class="navbar-wagon-item navbar-wagon-link">Offer a toy</a>
         <!-- Profile picture with dropdown list -->
         <div class="navbar-wagon-item">
@@ -18,7 +18,7 @@
             <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
             <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
               <li><a href="/users/:id">Profile</a></li>
-              <li><a href="/users/sign_out">Log Out</a></li>
+              <li><%= link_to 'Log Out', destroy_user_session_path , method: :delete  %></li>
             </ul>
           </div>
         </div>

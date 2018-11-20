@@ -1,4 +1,6 @@
 
-<h1>Book your toy </h1>
+<h1>Book your toy: </h1>
+<p><%= "#{@toy.price}, per day" %></p>
 
-<%= render 'form', booking: @booking %>
+<%= render 'form', booking: @booking, toy: @toy %>
+
