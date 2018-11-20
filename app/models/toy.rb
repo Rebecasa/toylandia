@@ -1,4 +1,5 @@
 class Toy < ApplicationRecord
+  mount_uploader :photo, PhotoUploader
   belongs_to :user
   has_many :bookings, dependent: :delete_all
   validates :name, presence: true
@@ -8,5 +9,4 @@ class Toy < ApplicationRecord
   validates :category, inclusion: {
     in: %w(cars cuddly creepy educational other)
   }
-  # TODO: add validation for category -> included in arr of categories
 end

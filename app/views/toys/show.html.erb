@@ -1,6 +1,10 @@
 <h1><%= @toy.name %></h1>
 
+<p><%= number_to_currency(@toy.price, unit: "€", separator: ",", delimiter: ".", format: "%n %u") %></p>
+
 <p><%= @toy.description %></p>
+
+<%= cl_image_tag @toy.photo, height: 200, crop: :fill %>
 
 <%= link_to edit_toy_path(@toy) do %>
   <i class="far fa-edit"></i>
