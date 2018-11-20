@@ -1,15 +1,13 @@
 <h1><%= @toy.name %></h1>
 
+<p><%= number_to_currency(@toy.price, unit: "€", separator: ",", delimiter: ".", format: "%n %u") %></p>
+
 <p><%= @toy.description %></p>
 
+<%= cl_image_tag @toy.photo, height: 200, crop: :fill %>
+<br>
 <% if current_user == @toy.user %>
   <%= link_to edit_toy_path(@toy) do %>
     <i class="far fa-edit"></i>
   <% end %>
-<% end %>
-
-<br>
-
-<%= link_to toys_path do %>
-  <i class="fas fa-long-arrow-alt-left"></i>
 <% end %>
