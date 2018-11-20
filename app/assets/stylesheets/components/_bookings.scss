@@ -1,0 +1,18 @@
+div#diff-booking {
+  display: flex !important;
+  padding-top: 50px;
+  justify-content: space-evenly;
+}
+div.bookings  {
+  border: 1px solid white;
+  padding: 20px;
+  background-color: $blue;
+  border-radius: 6px;
+}
+div.rentals {
+    border: 1px solid white;
+  padding: 20px;
+  background-color: $blue;
+  border-radius: 6px;
+}
+// BASIC STYLE! NOT DONE
