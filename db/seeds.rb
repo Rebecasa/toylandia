@@ -18,7 +18,7 @@ bunny.save!
 lapinou = Toy.new(user: bunny, name: 'lapinou', description: 'blablablabla', location: 'Bunny street 1307 Toylandia', price: 5, category:'creepy')
 lapinou.save!
 
-poupi = Toy.new(user: bunny,name: 'poupi', description: 'blablablabla', location: 'Bunny street 1307 Toylandia', price: 5, category:'cuddly')
+poupi = Toy.new(user: bunny, name: 'poupi', description: 'blablablabla', location: 'Bunny street 1307 Toylandia', price: 5, category:'cuddly')
 poupi.save!
 
 beisan = Toy.new(user: bala, name: 'beisan', description: 'blablablabla', location: 'Bunny street 1307 Toylandia', price: 5, category:'creepy')
