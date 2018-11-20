@@ -12,14 +12,19 @@ class BookingsController < ApplicationController
     @toy = Toy.find(params[:toy_id])
     @booking = Booking.new
     @booking.toy = @toy
+    @booking.user = current_user
   end
 
   def create
     @toy = Toy.find(params[:toy_id])
-    @user = User.find(params[:user_id])
     @booking = Booking.new(booking_params)
     @booking.toy = @toy
     @booking.user = current_user
+    if @booking.save
+      redirect_to bookings_path
+    else
+      render 'new'
+    end
   end
   def delete
   end
