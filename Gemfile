@@ -16,6 +16,9 @@ gem 'sassc-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
+gem 'cloudinary' # image storing
+gem 'carrierwave' # automates image upload by user
+gem 'pundit' # authorization
 
 group :development do
   gem 'web-console', '>= 3.3.0'
