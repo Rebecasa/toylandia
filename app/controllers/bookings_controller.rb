@@ -3,10 +3,6 @@ class BookingsController < ApplicationController
     @bookings = Booking.all
   end
 
-  def show
-    @booking = Booking.find(params[:id])
-  end
-
   def new
     @toy = Toy.find(params[:toy_id])
     @booking = Booking.new
