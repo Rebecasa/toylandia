@@ -14,6 +14,10 @@
   <%= f.label :category %>
   <%= f.select :category, ['cars', 'cuddly', 'creepy', 'educational', 'other'], class: "form-control" %>
 
+  <%= f.label :photo %>
+  <%= f.file_field :photo, accept: 'image/jpeg,image/gif,image/png' %>
+  <%= f.hidden_field :photo_cache %>
+
   <%= hidden_field_tag :status, "available" %>
 
   <%= f.submit class: "btn btn-warning" %>
@@ -21,4 +25,4 @@
 
 <!-- TO DO:
 € to price
-add photo -->
+-->

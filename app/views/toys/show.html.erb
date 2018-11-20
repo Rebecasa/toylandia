@@ -2,6 +2,8 @@
 
 <p><%= @toy.description %></p>
 
+<%= cl_image_tag @toy.photo, height: 200, crop: :fill %>
+
 <%= link_to edit_toy_path(@toy) do %>
   <i class="far fa-edit"></i>
 <% end %>
