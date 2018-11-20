@@ -5,12 +5,9 @@
 <p><%= @toy.description %></p>
 
 <%= cl_image_tag @toy.photo, height: 200, crop: :fill %>
-
-
-<%= link_to edit_toy_path(@toy) do %>
-  <i class="far fa-edit"></i>
-<% end %>
 <br>
-<%= link_to toys_path do %>
-  <i class="fas fa-long-arrow-alt-left"></i>
+<% if current_user == @toy.user %>
+  <%= link_to edit_toy_path(@toy) do %>
+    <i class="far fa-edit"></i>
+  <% end %>
 <% end %>
