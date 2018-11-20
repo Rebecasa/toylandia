@@ -1,6 +1,6 @@
 class Toy < ApplicationRecord
   belongs_to :user
-  has_many :bookings
+  has_many :bookings, dependent: :delete_all
   validates :name, presence: true
   validates :description, presence: true
   validates :price, presence: true
