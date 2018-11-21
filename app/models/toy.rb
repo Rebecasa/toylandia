@@ -14,5 +14,6 @@ class Toy < ApplicationRecord
   validates :category, inclusion: {
     in: %w(cars cuddly creepy educational other)
   }
+  validates :photo, presence: true
   after_validation :geocode, if: :will_save_change_to_location?
 end

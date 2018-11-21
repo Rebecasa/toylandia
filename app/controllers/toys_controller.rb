@@ -17,17 +17,19 @@ class ToysController < ApplicationController
         infoWindow: { content: render_to_string(partial: "/toys/map_window", locals: { toy: toy }) }
       }
     end
-  end
 
-    if !(params[:search]).nil?
+    # search function on navbar
+    if !(params[:search]).nil? # checks if params exists
+      #gets the value from the input and checks on db
       @toy = Toy.where("#{:name} ||#{:category}|| #{:location} ilike ?", "%#{params[:search]}%").take
       if @toy.nil?
         redirect_to toys_path, alert: "doesn't exist"
-        else
-          @toys = Toy.where("#{:name} ||#{:category}|| #{:location} ilike ?", "%#{params[:search]}%")
+      else
+        #selects the toys in the condition
+        @toys = Toy.where("#{:name} ||#{:category}|| #{:location} ilike ?", "%#{params[:search]}%")
       end
     end
-end
+  end
 
   def show
     @toy = Toy.find(params[:id])
