@@ -1,3 +1,8 @@
+.toy-container {
+  display: flex;
+  justify-content: center;
+}
+
 .toy-card {
   background: white;
   border-radius: 15px;
@@ -6,9 +11,12 @@
   min-height: 50vh;
   max-height: calc(100vh - 90px);
   margin-top: 40px;
-  margin-left: 40px;
   position: relative;
   overflow: scroll;
+  .row {
+    margin-left: 0;
+    margin-right: 15px;
+  }
 }
 
 .toy-card-footer {
@@ -26,7 +34,6 @@
   border-top: 2px solid $blue;
   border-bottom: 2px solid $blue;
   border-radius: 15px;
-  box-shadow: 2px 2px 25px rgba(0, 0, 0, 0.1);
 }
 
 .toy-photo-container {

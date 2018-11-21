@@ -13,7 +13,7 @@
 
     <div class="form-inputs">
       <%= f.label :price %>
-      <%= f.text_field :price, value: number_to_currency(0, unit: "€", separator: ",", delimiter: ".", format: "%n %u"), class: "form-control" %>
+      <%= f.text_field :price, class: "form-control", id: "price-field", placeholder: "0,00€", value: number_to_currency(toy.price, unit: "€", separator: ",", delimiter: ".", format: "%n %u") unless :price.nil? %>
     </div>
 
     <div class="form-inputs">
@@ -34,6 +34,6 @@
 
     <%= hidden_field_tag :status, "available" %>
 
-    <%= f.submit class: "button-form" %>
+    <%= f.submit id: "toy-form-btn", class: "button-form" %>
   <% end %>
 </div>

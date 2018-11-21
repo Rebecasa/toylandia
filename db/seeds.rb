@@ -24,11 +24,13 @@ lapinou = Toy.new(user: bunny, name: 'lapinou', description: 'Lapinou is a very 
 lapinou.remote_photo_url = 'https://res.cloudinary.com/blueolive/image/upload/v1542710715/tqbjt0z5fegfxa4mevmt.jpg'
 lapinou.save!
 
-poupi = Toy.new(user: bunny, name: 'poupi', description: 'blablablabla', location: 'Berlin', price: 9, category:'cars')
+poupi = Toy.new(user: bunny, name: 'poupi', description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.', location: 'Berlin', price: 9, category:'cars')
 poupi.remote_photo_url = 'https://res.cloudinary.com/blueolive/image/upload/v1542710518/e6n3cpr5iyjchxzt23z4.jpg'
 poupi.save!
 
-beisan = Toy.new(user: bala, name: 'beisan', description: 'blablablabla', location: 'Goiânia', price: 3, category:'creepy')
+
+beisan = Toy.new(user: bala, name: 'beisan', description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.', location: 'Goiana', price: 3, category:'creepy')
+
 beisan.remote_photo_url = 'https://res.cloudinary.com/blueolive/image/upload/v1542719080/doll.jpg'
 beisan.save!
 
@@ -41,12 +43,13 @@ booking2.save!
 # test_booking.toy = beisan
 
 
-poupi = Toy.new(user: bunny, name: 'poupi', description: 'blablablabla', location: 'Bunny street 1307 Toylandia', price: 5, category:'cuddly')
+poupi = Toy.new(user: bunny, name: 'poupi', description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.', location: 'Bunny street 1307 Toylandia', price: 5, category:'cuddly')
 poupi.remote_photo_url = 'https://res.cloudinary.com/blueolive/image/upload/v1542710518/e6n3cpr5iyjchxzt23z4.jpg'
 poupi.save!
 
 
-conejito = Toy.new(user: bala, name: 'conejito', description: 'Conejito is supposed to be a cute bunny but somebody uploaded a weird picture instead...Deal with it.', location: 'Madrid', price: 2, category:'educational')
+
+conejito = Toy.new(user: bala, name: 'conejito', description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.', location: 'Madrid', price: 2, category:'educational')
 conejito.remote_photo_url = 'https://res.cloudinary.com/blueolive/image/upload/v1542719181/-.jpg'
 conejito.save!
 
@@ -59,7 +62,7 @@ sloncek = Toy.new(user: bugsbunny, name: 'slonček jakonček', description: 'Vro
 sloncek.remote_photo_url = 'https://res.cloudinary.com/blueolive/image/upload/v1542794703/photo-1508896694512-1eade558679c.jpg'
 sloncek.save!
 
-hulk = Toy.new(user: bunny, name: 'hulk', description: 'Sometimes hulk get angry. In that case, just get away from it. But most of hte time, he is a gentle giant.', location: 'Paris', price: 15, category:'educational')
+hulk = Toy.new(user: bunny, name: 'hulk', description: 'Sometimes hulk get angry. In that case, just get away from it. But most of the time, he is a gentle giant.', location: 'Paris', price: 15, category:'educational')
 hulk.remote_photo_url = 'https://res.cloudinary.com/blueolive/image/upload/v1542794703/photo-1542623024-a797a755b8d0.jpg'
 hulk.save!
 
