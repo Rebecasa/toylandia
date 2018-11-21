@@ -1,11 +1,26 @@
-<div class="container">
-  <h1>Rent one of these toys:</h1>
+<div class="wrapper">
 
+  <h1 id="available-toys"><u>Available Toys</u></h1>
+  <br>
+  <div class="container">
+    <div class="row">
+      <% @toys.each do |toy| %>
+        <div class="col-xs-6 col-md-3">
+          <div class="card" style= "background-image: url(<%= cl_image_path toy.photo, height: 200, crop: :fill %>)">
+            <div class="card-category"><%= toy.category.upcase %></div>
+            <div class="card-price"><%= toy.price %>€/day</div>
+            <div class="card-title"><%= toy.name.upcase %></div>
+            <%= link_to '', toy_path(toy), class:'card-link' %>
 
-  <% @toys.each do |toy| %>
-    <%= link_to toy.name, toy_path(toy) %>
-  <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
 
-
-  <%= link_to 'add a new toy', new_toy_path %>
+  <div class="container">
+    <% if user_signed_in? %>
+      <%= link_to 'add a new toy', new_toy_path, class:'button-form' %>
+    <% end %>
+  </div>
 </div>

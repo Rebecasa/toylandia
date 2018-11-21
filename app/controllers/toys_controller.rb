@@ -9,6 +9,7 @@ class ToysController < ApplicationController
 
   def show
     @toy = Toy.find(params[:id])
+    @review = Review.new
     authorize @toy
   end
 

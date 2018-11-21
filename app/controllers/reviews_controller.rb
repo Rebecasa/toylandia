@@ -3,12 +3,14 @@ class ReviewsController < ApplicationController
     @toy = Toy.find(params[:toy_id])
     @review = Review.new
     @review.toy = @toy
+    authorize @review
   end
 
   def create
     @toy = Toy.find(params[:toy_id])
     @review = Review.new(review_params)
     @review.toy = @toy
+    authorize @review
     if @review.save
       redirect_to toy_path(@toy)
     else
