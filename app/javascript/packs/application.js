@@ -1,4 +1,5 @@
 import "bootstrap";
+
 import "../plugins/flatpickr";
 
 
@@ -8,3 +9,4 @@ import formatCurrency from './price';
 
 showForm();
 hideForm();
+

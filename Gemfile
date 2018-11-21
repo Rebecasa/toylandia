@@ -16,9 +16,10 @@ gem 'sassc-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
-gem 'cloudinary', '1.9.1'# image storing
+gem 'cloudinary', '1.9.1' # image storing
 gem 'carrierwave' # automates image upload by user
 gem 'pundit' # authorization
+gem 'geocoder' # transforms addresses into latitude and longitude
 
 group :development do
   gem 'web-console', '>= 3.3.0'
