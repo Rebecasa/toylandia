@@ -7,7 +7,7 @@
   color: white;
   position: relative;
   border-radius: 10px;
-  margin: 5px;
+  margin-bottom: 25px;
   border: 2px solid $blue;
   text-align: center;
 }
@@ -41,8 +41,8 @@
   background-color: rgba(255,255,255,0.8);
   width: 100%;
   bottom: 0;
-  border-bottom-right-radius: 10px;
-  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
   color: $gray;
 }
 
