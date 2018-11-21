@@ -5,7 +5,15 @@ class ToysController < ApplicationController
   def index
     @toys = policy_scope(Toy).order(created_at: :desc)
     authorize @toys
-  end
+    if !(params[:search]).nil?
+      @toy = Toy.where("#{:name} ||#{:category}|| #{:location} ilike ?", "%#{params[:search]}%").take
+      if @toy.nil?
+        redirect_to toys_path, alert: "doesn't exist"
+        else
+          @toys = Toy.where("#{:name} ||#{:category}|| #{:location} ilike ?", "%#{params[:search]}%")
+      end
+    end
+end
 
   def show
     @toy = Toy.find(params[:id])
