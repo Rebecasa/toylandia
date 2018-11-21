@@ -65,3 +65,25 @@
 ul>li {
   margin-bottom: 10px;
 }
+
+#new-review {
+  cursor: pointer;
+  color: $blue;
+}
+
+#review-form {
+  background-color: rgba(255, 255, 255, 0.9);
+  position: fixed;
+  left: calc(50% - 250px);
+  top: calc(50% - 250px);
+  border-radius: 15px;
+  padding: 50px;
+  box-shadow: 2px 2px 25px rgba(0, 0, 0, 0.1);
+  #btn-close {
+    position: fixed;
+    top: calc(50% - 240px);
+    right: calc(50% - 230px);
+    cursor: pointer;
+    color: $blue;
+  }
+}
