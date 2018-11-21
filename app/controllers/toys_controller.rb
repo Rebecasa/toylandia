@@ -19,8 +19,19 @@ class ToysController < ApplicationController
     end
   end
 
+    if !(params[:search]).nil?
+      @toy = Toy.where("#{:name} ||#{:category}|| #{:location} ilike ?", "%#{params[:search]}%").take
+      if @toy.nil?
+        redirect_to toys_path, alert: "doesn't exist"
+        else
+          @toys = Toy.where("#{:name} ||#{:category}|| #{:location} ilike ?", "%#{params[:search]}%")
+      end
+    end
+end
+
   def show
     @toy = Toy.find(params[:id])
+    @review = Review.new
     authorize @toy
   end
 

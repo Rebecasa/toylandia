@@ -24,16 +24,69 @@ html {
 }
 
 body {
-  background-size: cover;
-  background-repeat: no-repeat;
+
+  font-family: 'PT Sans', sans-serif;
+
   min-height: 100vh;
   justify-content: space-around;
-  background-image: url("https://images.unsplash.com/photo-1530325553241-4f6e7690cf36?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=492f6735e2c55d60fe2f791f1c546280&auto=format&fit=crop&w=1350&q=80");
+
+  background-color: #f3f4eb; //warmer version
+  background-color: #ecede8; //colder version //Default
+  // background-image: url("https://images.unsplash.com/photo-1530325553241-4f6e7690cf36?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=492f6735e2c55d60fe2f791f1c546280&auto=format&fit=crop&w=1350&q=80");
   background-size: cover;
   background-position: top center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   /* bottom = footer height */
+  text-align:center;
 }
-
-
+// DO NOT TOUCH/ animation for teddy bear no 2
+svg {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+}
+.eyes {
+  transform-box: fill-box;
+}
+@-webkit-keyframes eyes {
+  0% {
+    -webkit-transform: translateX(0px);
+    transform: rotate(0deg);
+    transform-origin: bottom;
+    transform-box: fill-box;
+  }
+  100% {
+    -webkit-transform: translateX(0px);
+    transform: rotate(360deg);
+    transform-origin: bottom;
+    transform-box: fill-box;
+  }
+}
+@-webkit-keyframes bowspin {
+  0% {
+    transform: rotate(0deg);
+    transform-origin: center;
+    transform-box: fill-box;
+  }
+  100% {
+    transform: rotate(360deg);
+    transform-origin: center;
+    transform-box: fill-box;
+  }
+}
+.pupils {
+  -webkit-animation: eyes 2s ease-in-out infinite;
+  animation: eyes 2s linear infinite;
+}
+.bowtie {
+  -webkit-animation: bowspin 1.3s infinite;
+  transform-origin: bottom center;
+  animation: bowspin .5s infinite;
+  -webkit-animation-timing-function: linear;
+}
+//Specific style for h1 in toys index
+#available-toys {
+  text-shadow: 1px 1px #628488;
+  color: $blue;
+}

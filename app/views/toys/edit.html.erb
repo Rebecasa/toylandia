@@ -1,7 +1,6 @@
-<h1>Edit <%= @toy.name %></h1>
+<h1>Edit <%= @toy.name.capitalize %></h1>
 
 <%= render 'form', toy: @toy %>
 
 <%= link_to toy_path(@toy) do %>
-  <i class="fas fa-long-arrow-alt-left"></i>
-<% end %>
+<i class="fas fa-undo"></i><% end %>
