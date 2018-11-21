@@ -3,8 +3,19 @@ class ToysController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
+    # Toys for the authorization
     @toys = policy_scope(Toy).order(created_at: :desc)
     authorize @toys
+
+    # Toys to show on the map
+    @toysmap = Toy.where.not(latitude: nil, longitude: nil)
+
+    @markers = @toysmap.map do |toy|
+      {
+        lng: toy.longitude,
+        lat: toy.latitude
+      }
+    end
   end
 
   def show
