@@ -22,15 +22,20 @@
         <font size="-1"><i class="fas fa-plus"></i></font>
       <% end %>
       </h3>
-      <ul class="list-unstyled"></ul>
+      <ul class="list-unstyled">
         <% @toy.reviews.each do |review| %>
           <li>
-            <% review.rating.times do %>
+            <div>
+              <% review.rating.times do %>
                <i class="fas fa-star"></i>
-            <% end %>
-            <%= @review.content %>
+              <% end %>
+            </div>
+            <div>
+              "<em><%= review.content %>"</em>
+            </div>
           </li>
         <% end %>
+      </ul>
     </div>
   </div>
 
