@@ -28,7 +28,7 @@ poupi = Toy.new(user: bunny, name: 'poupi', description: 'blablablabla', locatio
 poupi.remote_photo_url = 'https://res.cloudinary.com/blueolive/image/upload/v1542710518/e6n3cpr5iyjchxzt23z4.jpg'
 poupi.save!
 
-beisan = Toy.new(user: bala, name: 'beisan', description: 'blablablabla', location: 'Goiana', price: 3, category:'creepy')
+beisan = Toy.new(user: bala, name: 'beisan', description: 'blablablabla', location: 'Goiânia', price: 3, category:'creepy')
 beisan.remote_photo_url = 'https://res.cloudinary.com/blueolive/image/upload/v1542719080/doll.jpg'
 beisan.save!
 
