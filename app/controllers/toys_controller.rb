@@ -13,7 +13,8 @@ class ToysController < ApplicationController
     @markers = @toysmap.map do |toy|
       {
         lng: toy.longitude,
-        lat: toy.latitude
+        lat: toy.latitude,
+        infoWindow: { content: render_to_string(partial: "/toys/map_window", locals: { toy: toy }) }
       }
     end
   end

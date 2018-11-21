@@ -1,17 +1,17 @@
-#toys-index-wrapper {
+.toys-index-wrapper {
   display: flex;
 }
 
-#cards-container {
-  margin-left: 50px;
+.cards-container {
+  flex: 0 0 70%;
 }
 
-// #map-container {
-// }
 
-
-.mapboxgl-map {
-  position: absolute;
-  left: 0px;
+.map-container {
+  flex: 0 0 30%;
+  width: auto;
 }
 
+h1 {
+  text-align: center;
+}
