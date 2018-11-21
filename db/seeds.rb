@@ -46,7 +46,7 @@ poupi.remote_photo_url = 'https://res.cloudinary.com/blueolive/image/upload/v154
 poupi.save!
 
 
-conejito = Toy.new(user: bala, name: 'conejito', description: 'blablablabla', location: 'Madrid', price: 2, category:'educational')
+conejito = Toy.new(user: bala, name: 'conejito', description: 'Conejito is supposed to be a cute bunny but somebody uploaded a weird picture instead...Deal with it.', location: 'Madrid', price: 2, category:'educational')
 conejito.remote_photo_url = 'https://res.cloudinary.com/blueolive/image/upload/v1542719181/-.jpg'
 conejito.save!
 
