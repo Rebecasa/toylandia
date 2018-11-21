@@ -3,16 +3,43 @@ div#diff-booking {
   padding-top: 50px;
   justify-content: space-evenly;
 }
+
 div.bookings  {
-  border: 1px solid white;
+  border: 1px solid $blue;
   padding: 20px;
-  background-color: $blue;
+  background-color: white;
   border-radius: 6px;
+  box-shadow: 1px 1px 1px dimgray;
+  opacity: 0.9;
+  min-height: 355px;
+  min-width: 607px;
+  h1{
+    display: table-cell;
+    padding: 10px;
+  border-bottom: 6px solid $blue;
+ }
 }
 div.rentals {
-    border: 1px solid white;
+  border: 1px solid $blue;
   padding: 20px;
-  background-color: $blue;
+  background-color: white;
   border-radius: 6px;
+  box-shadow: 1px 1px 1px dimgray;
+  opacity: 0.9;
+  min-height: 355px;
+  min-width: 607px;
+  h1{
+    display: table-cell;
+    padding: 10px;
+    border-bottom: 6px solid $blue;
+ }
 }
-// BASIC STYLE! NOT DONE
+
+.each-toy{
+  display:flex;
+  justify-content: space-evenly;
+  padding: 20px;
+  background-color: white;
+  border-radius: 6px;
+  box-shadow: 1px 1px 1px dimgray;
+}

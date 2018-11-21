@@ -1,6 +1,7 @@
 class BookingsController < ApplicationController
   def index
-    @bookings = policy_scope(Booking).order(created_at: :desc)
+    # @bookings = policy_scope(Booking).order(created_at: :desc)
+     @bookings = policy_scope(Booking).where(user: current_user).order(created_at: :desc)
     authorize @bookings
   end
 
@@ -18,11 +19,13 @@ class BookingsController < ApplicationController
     @booking.toy = @toy
     @booking.user = current_user
     authorize @booking
-    if @booking.save
-      redirect_to bookings_path
-    else
-      render 'new'
+    if @booking.check_date
+      if @booking.save
+        redirect_to bookings_path
+      else
+        render 'new'
     end
+  end
   end
 
   def destroy
