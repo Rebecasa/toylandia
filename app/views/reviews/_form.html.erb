@@ -1,9 +1,8 @@
   <div style="width: 400px; margin: 0 auto;">
     <%= simple_form_for [toy, review] do |f| %>
-      <%= f.input :content, as: :text, label: :Comments %>
-      <%= f.input :rating, collection: [0, 1, 2, 3, 4, 5] %>
 
-
+      <%= f.input :content, as: :text, label: :Coments %>
+      <%= f.input :rating, collection: [1, 2, 3, 4, 5] %>
       <%= f.submit class: "button-form" %>
     <% end %>
 </div>
