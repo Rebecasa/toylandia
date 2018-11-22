@@ -16,6 +16,9 @@
       <%= f.input :password_confirmation,
                   required: true,
                   input_html: { autocomplete: "new-password" } %>
+      <%= f.label :photo %>
+      <%= f.file_field :photo, required: true, accept: 'image/jpeg,image/gif,image/png', class: "button-form" %>
+      <%= f.hidden_field :photo_cache %>
     </div>
 
     <div class="form-actions">
