@@ -48,3 +48,22 @@
 
 
 
+  <div class="cards-container">
+    <!-- The toys cards -->
+    <div class="row">
+      <% @mytoys.each do |toy| %>
+        <div class="col-xs-6 col-md-4">
+          <div class="card" style= "background-image: url(<%= cl_image_path toy.photo, height: 200, crop: :fill %>)">
+            <div class="card-category"><%= toy.category.upcase %></div>
+            <div class="card-price"><%= number_to_currency(toy.price, unit: "€", separator: ",", delimiter: ".", format: "%n %u") %>/day</div>
+            <div class="card-title"><%= toy.name.upcase %></div>
+            <%= link_to '', toy_path(toy), class:'card-link' %>
+          </div>
+        </div>
+      <% end %>
+
+    </div>
+  </div>
+
+
+

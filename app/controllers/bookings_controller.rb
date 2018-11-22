@@ -3,6 +3,8 @@ class BookingsController < ApplicationController
     # @bookings = policy_scope(Booking).order(created_at: :desc)
      @bookings = policy_scope(Booking).where(user: current_user).order(created_at: :desc)
     authorize @bookings
+
+    @mytoys = policy_scope(Toy).select { |toy| toy.user == current_user }
   end
 
   def new

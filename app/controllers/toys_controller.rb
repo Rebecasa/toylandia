@@ -6,6 +6,7 @@ class ToysController < ApplicationController
     # Toys for the authorization
     @toys = policy_scope(Toy).order(created_at: :desc)
     authorize @toys
+    # @mytoys = policy_scope(Toy).select { |toy| toy.user == current_user }
 
     # Toys to show on the map
     @toysmap = Toy.where.not(latitude: nil, longitude: nil)
