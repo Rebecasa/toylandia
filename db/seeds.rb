@@ -6,12 +6,15 @@ puts 'Creating adorable stuff...'
 
 # Users
 bala = User.new( email: 'balatheballerina@dogs.com', password: '123456789')
+bala.remote_photo_url = 'https://res.cloudinary.com/blueolive/image/upload/v1542899427/ad893707-7999-4e6e-96ac-6ad81fa95327.jpg'
 bala.save!
 
 bunny = User.new( email: 'bunnythedoghater@dogs.com', password: '123456789')
+bunny.remote_photo_url = 'https://res.cloudinary.com/blueolive/image/upload/v1542901161/download.png'
 bunny.save!
 
 bugsbunny = User.new( email: 'bugsbunny@rabbits.com', password: '123456789')
+bugsbunny.remote_photo_url = 'https://res.cloudinary.com/blueolive/image/upload/v1542900942/img_avatar2.png'
 bugsbunny.save!
 
 # Toys
