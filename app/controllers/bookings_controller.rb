@@ -6,6 +6,15 @@ class BookingsController < ApplicationController
     @mytoys = policy_scope(Toy).select { |toy| toy.user == current_user }
   end
 
+  def show
+    @toy = Toy.find(params[:toy_id])
+    @booking = Booking.find(params[:id])
+    @booking.toy = @toy
+    @booking.user = current_user
+    @message = Message.new
+    authorize @booking
+  end
+
   def new
     @toy = Toy.find(params[:toy_id])
     @booking = Booking.new
@@ -25,8 +34,8 @@ class BookingsController < ApplicationController
         redirect_to bookings_path
       else
         render 'new'
+      end
     end
-  end
   end
 
   def destroy
