@@ -1,8 +1,7 @@
-<h1>Bookings show</h1>
-
-<div class="bookings">
+<div class="bookings text-center">
   <h1>Booking:</h1>
-
-<%= @booking.id %>
-
-<%= render 'messages/form', booking: @booking, message: @message %>
+  <%= render 'messages/form', booking: @booking, message: @message %>
+  <% @booking.user.messages.each do |message| %>
+  <p><%= message.content %> - Your message </p>
+  <% end %>
+</div>

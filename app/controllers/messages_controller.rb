@@ -3,6 +3,7 @@ class MessagesController < ApplicationController
     @booking = Booking.find(params[:booking_id])
     @message = Message.new(message_params)
     @message.user = current_user
+    authorize @message
   end
 
   def create
@@ -10,6 +11,7 @@ class MessagesController < ApplicationController
     @message = Message.new(message_params)
     @message.user = current_user
     @message.save!
+    authorize @message
   end
 
   private

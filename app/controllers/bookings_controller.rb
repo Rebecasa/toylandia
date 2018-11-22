@@ -9,8 +9,6 @@ class BookingsController < ApplicationController
   def show
     @toy = Toy.find(params[:toy_id])
     @booking = Booking.find(params[:id])
-    @booking.toy = @toy
-    @booking.user = current_user
     @message = Message.new
     authorize @booking
   end
