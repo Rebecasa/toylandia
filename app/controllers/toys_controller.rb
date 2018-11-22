@@ -6,6 +6,7 @@ class ToysController < ApplicationController
     # Toys for the authorization
     @toys = policy_scope(Toy).order(created_at: :desc)
     authorize @toys
+
     # @mytoys = policy_scope(Toy).select { |toy| toy.user == current_user }
 
     # Toys to show on the map
@@ -19,15 +20,23 @@ class ToysController < ApplicationController
       }
     end
 
-    # search function on navbar
+    # Search function on navbar
     if !(params[:search]).nil? # checks if params exists
-      #gets the value from the input and checks on db
+      # Gets the value from the input and checks on db
       @toy = Toy.where("#{:name} ||#{:category}|| #{:location} ilike ?", "%#{params[:search]}%").take
       if @toy.nil?
         redirect_to toys_path, alert: "doesn't exist"
       else
-        #selects the toys in the condition
+        # Selects the toys in the condition
         @toys = Toy.where("#{:name} ||#{:category}|| #{:location} ilike ?", "%#{params[:search]}%")
+        # Changes the markers to only the filtered toys
+        @markers = @toys.map do |toy|
+          {
+            lng: toy.longitude,
+            lat: toy.latitude,
+            infoWindow: { content: render_to_string(partial: "/toys/map_window", locals: { toy: toy }) }
+          }
+        end
       end
     end
   end

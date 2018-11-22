@@ -1,13 +1,23 @@
 .toys-index-wrapper {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .cards-container {
   flex: 0 0 70%;
 }
 
-
 .map-container {
   flex: 0 0 30%;
   width: auto;
+}
+
+@media (max-width: 1600px) {
+  .cards-container {
+    flex: 1 1 100%;
+  }
+  .map-container {
+    flex: 1 1 100%;
+    width: auto;
+  }
 }

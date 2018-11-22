@@ -28,7 +28,7 @@ body {
   min-height: 100vh;
   justify-content: space-around;
   background-color: #f3f4eb; //warmer version
-  background-color: #ecede8; //colder version //Default
+  background-color: $background; //colder version //Default
   background-size: cover;
   background-position: top center;
   background-repeat: no-repeat;

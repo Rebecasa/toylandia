@@ -1,15 +1,16 @@
 .card {
   height: 200px;
-  max-width: 300px;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  max-width: 350px;
+  color: $background;
   background-size: cover !important;
   background-position: center;
-  color: white;
   position: relative;
   border-radius: 10px;
-  margin-bottom: 25px;
+  margin: auto;
+  margin-bottom: 20px;
   border: 2px solid $blue;
-  text-align: center;
+  text-shadow: 0 1px 3px rgb(0,0,0);
+  font-size: 18px;
 }
 
 // Category of the toy
@@ -17,11 +18,12 @@
   position: absolute;
   top: 0px;
   left: 0px;
-  font-size: 15px;
-  background-color: $blue;
-  width: 130px;
+  background-color: rgba(166,166,166,0.5);
+  width: 110px;
+  height: 25px;
   border-bottom-right-radius: 10px;
   border-top-left-radius: 8px;
+  padding-left: 12px;
 }
 
 .card-price {
@@ -29,21 +31,25 @@
   top: 0px;
   right: 0px;
   font-size: 15px;
-  background-color: $red;
+  background-color: $yellow;
+  height: 25px;
   width: 100px;
   border-bottom-left-radius: 10px;
   border-top-right-radius: 8px;
+  text-align: right;
+  padding-right: 12px;
 }
 
 // Name of the toy
 .card-title {
   position: absolute;
-  background-color: rgba(255,255,255,0.8);
+  background-color: $transparent-blue;
   width: 100%;
   bottom: 0;
   border-bottom-right-radius: 8px;
   border-bottom-left-radius: 8px;
-  color: $gray;
+  color: white;
+  text-align: center;
 }
 
 .card-link {
@@ -57,6 +63,20 @@
   opacity: 0;
 }
 
-.card-link:hover {
-  opacity: 0.1;
+// Price is originally hidden
+.card-price {
+  opacity: 0;
+}
+
+ // Only show the price when card is hovered
+.card:hover .card-price{
+  opacity: 1;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  font-size: 15px;
+  background-color: $yellow;
+  width: 100px;
+  border-bottom-left-radius: 10px;
+  border-top-right-radius: 8px;
 }
