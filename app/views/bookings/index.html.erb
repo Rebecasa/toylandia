@@ -19,11 +19,11 @@
               <p><%= number_to_currency(price, unit: "€", separator: ",", delimiter: ".", format: "%n %u") %></p>
             </div>
             <%= link_to "Cancel Booking", booking_path(booking), method: :delete, data:
-            {confirm: "Are your sure you want to delete the booking for #{booking.toy.name}" },class: "button-form"  %>
+            {confirm: "Are your sure you want to delete the booking for #{booking.toy.name}" },class: "butt on-form"  %>
+            <%= link_to "Chat", toy_booking_path(booking.toy_id, booking), class: "button-form"  %>
         </div>
       <% end %>
     </div>
-
 
     <div id="rentals" style= " display: none;">
       <% @rentals.each do |booking| %>
