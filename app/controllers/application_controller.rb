@@ -1,4 +1,8 @@
 class ApplicationController < ActionController::Base
+  def store_return_to
+    session[:return_to] = request.url
+  end
+
   protect_from_forgery
   before_action :authenticate_user!, except: :home
 
