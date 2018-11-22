@@ -8,10 +8,10 @@
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
-    <%= form_tag(toys_path, method: "get") do %>
-      <div class= "navbar-wagon-item navbar-wagon-link inline-block">
-      <%= text_field_tag(:search, params[:search], placeholder:"Search for a toy") %>
-      <%= submit_tag("Search") %>
+    <div class= "navbar-wagon-item navbar-wagon-link inline-block">
+      <%= form_tag(toys_path, method: "get") do %>
+      <%= text_field_tag(:search, params[:search], placeholder:"  Search for a toy") %>
+      <%= submit_tag("Search", id:"button-navbar") %>
       <% end %>
     </div>
     <!-- If user is logged in, possible actions are: Index Toys, Index Bookings, Show User, Log out-->
