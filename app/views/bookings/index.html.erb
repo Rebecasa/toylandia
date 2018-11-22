@@ -1,39 +1,38 @@
+<div class="tab">
+  <button class="bookings-btn not-active">Bookings</button>
+  <button class="rentals-btn not-active">Rentals</button>
+</div>
 
-  <div id="diff-booking">
-    <div class="bookings">
-      <h1>Bookings:</h1>
+<div id="diff-bookings">
+
+    <div id="bookings" style= " display: block;">
       <% @bookings.each do |booking| %>
         <div class="each-toy">
-          <%# if booking.user == current_user %>
             <div class="toy-name">
-              <%= cl_image_tag booking.toy.photo, height: 70, crop: :fill %>
-              <p><%= booking.toy.name.capitalize %></p>
+              <p class= "name"><%= booking.toy.name.capitalize %></p>
+              <%= link_to (cl_image_tag booking.toy.photo, height: 70, crop: :fill),toy_path(booking.toy)  %>
             </div>
             <div class="toy-date-price">
-
-              <p><%= "#{booking.start_date.strftime('%e/%m/%Y')} - #{booking.end_date.strftime('%e/%m/%Y')}" %></p>
+              <p class= "date"><%= "#{booking.start_date.strftime('%e/%m/%Y')} - #{booking.end_date.strftime('%e/%m/%Y')}" %></p>
               <% price = (booking.end_date - booking.start_date + 1).to_i * booking.toy.price.to_i %>
               <p><%= number_to_currency(price, unit: "€", separator: ",", delimiter: ".", format: "%n %u") %></p>
             </div>
             <%= link_to "Cancel Booking", booking_path(booking), method: :delete, data:
             {confirm: "Are your sure you want to delete the booking for #{booking.toy.name}" },class: "button-form"  %>
-          <%# end %>
         </div>
       <% end %>
     </div>
 
 
-    <div class="rentals">
-      <h1>Rentals:</h1>
-
+    <div id="rentals" style= " display: none;">
       <% @rentals.each do |booking| %>
           <div class="each-toy">
             <div class="toy-name">
-              <%= cl_image_tag booking.toy.photo, height: 70, crop: :fill %>
-              <p><%= booking.toy.name.capitalize %></p>
+              <p class= "name"><%= booking.toy.name.capitalize %></p>
+              <%= link_to (cl_image_tag booking.toy.photo, height: 70, crop: :fill),toy_path(booking.toy)  %>
             </div>
             <div class="toy-date-price">
-              <p><%= " #{booking.start_date.strftime('%e/%m/%Y')}  - #{booking.end_date.strftime('%e/%m/%Y')}" %></p>
+              <p class= "date"><%= " #{booking.start_date.strftime('%e/%m/%Y')}  - #{booking.end_date.strftime('%e/%m/%Y')}" %></p>
               <% price = (booking.end_date - booking.start_date + 1).to_i * booking.toy.price.to_i %>
               <p><%= number_to_currency(price, unit: "€", separator: ",", delimiter: ".", format: "%n %u") %></p>
             </div>
@@ -42,7 +41,7 @@
           </div>
       <% end %>
     </div>
-  </div>
+</div>
 
 
 
