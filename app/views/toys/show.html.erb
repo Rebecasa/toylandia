@@ -1,62 +1,52 @@
-<div class="toy-container">
-<div class="toy-card">
 
-  <div class="row">
-    <div class="col-xs-12 col-md-6 toy-info">
-      <h1><%= @toy.name.capitalize %></h1>
+<div class="container-fluid">
+  <div class="toy-container">
+    <div class="toy-card">
+      <div class="toy-info">
+        <h1><%= @toy.name.capitalize %></h1>
+        <p class="toy-price"><font size="-1"><i class="fas fa-coins"></i></font>
+          <%= number_to_currency(@toy.price, unit: "€", separator: ",", delimiter: ".", format: "%n %u") %></p>
+        <p class="toy-category"><i class="fas fa-tags"></i> <%= @toy.category.capitalize %></p>
+        <div class="toy-description"><p><%= @toy.description.capitalize %></p></div>
+        <% if current_user == @toy.user %>
+          <%= link_to edit_toy_path(@toy) do %>
+            <i class="far fa-edit"></i>
+          <% end %>
+        <% else %>
+          <p class="toy-book"><%= link_to "Book this toy", new_toy_booking_path(@toy),class: "button-form"%></p>
 
-      <p class="toy-price"><font size="-1"><i class="fas fa-coins"></i></font> <%= number_to_currency(@toy.price, unit: "€", separator: ",", delimiter: ".", format: "%n %u") %></p>
-
-      <p class="toy-category"><i class="fas fa-tags"></i> <%= @toy.category.capitalize %></p>
-
-      <p class="toy-book"><%= link_to "Book this toy", new_toy_booking_path(@toy),class: "button-form"%></p>
-    </div>
-
-    <div class="col-xs-12 col-md-6 toy-photo-container">
-      <%= cl_image_tag @toy.photo, height: 200, crop: :fill, class: "toy-photo" %>
-    </div>
-
-    <div class="col-xs-12 toy-description">
-      <p><%= @toy.description.capitalize %></p>
-      <h3>Reviews
-        <% if current_user %>
-          <font size="-1"><i id="new-review" class="fas fa-plus"></i></font>
         <% end %>
-      </h3>
-      <ul class="list-unstyled">
-        <% @toy.reviews.each do |review| %>
-          <li>
-            <div>
-              <% review.rating.times do %>
-               <i class="fas fa-star"></i>
-              <% end %>
-            </div>
-            <div>
-              "<em><%= review.content %>"</em>
-            </div>
-          </li>
-        <% end %>
-      </ul>
+        <div class="toy-reviews">
+          <h3>Reviews <font size="-1"><i id="new-review" class="fas fa-plus"></i></font></h3>
+          <ul class="list-unstyled">
+            <% @toy.reviews.each do |review| %>
+              <li>
+                <div><% review.rating.times do %><i class="fas fa-star"></i><% end %></div>
+                <div>"<em><%= review.content %>"</em></div>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+
+        <div class="toy-card-footer">
+          <%= link_to toys_path do %>
+            <i class="fas fa-long-arrow-alt-left fa-lg  "></i>
+          <% end %>
+        </div>
+      </div>
+      <div class="toy-images-container">
+        <%= cl_image_tag @toy.photo, height: 200, crop: :fill, class: "toy-photo" %>
+        <div class="map-show-container">
+          <div id="map" class="toy-map" style="width: 100%; height: 700px;" data-markers="<%= @marker.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+        </div>
+      </div>
     </div>
   </div>
-
-  <div class="toy-card-footer">
-    <div>
-      <% if current_user == @toy.user %>
-        <%= link_to edit_toy_path(@toy) do %>
-          <i class="far fa-edit"></i>
-        <% end %>
-      <% end %>
+  </div>
+    <div id="review-form" style="display: none;">
+      <div id="btn-close">x</div>
+      <%= render 'reviews/form', toy: @toy, review: @review  %>
     </div>
-    <%= link_to toys_path do %>
-        <!-- <i class="fas fa-long-arrow-alt-left"></i> -->
-        <i class="fas fa-undo"></i>
-    <% end %>
   </div>
 </div>
 
-<div id="review-form" style="display: none;">
-  <div id="btn-close">x</div>
-  <%= render 'reviews/form', toy: @toy, review: @review  %>
-</div>
-</div>
