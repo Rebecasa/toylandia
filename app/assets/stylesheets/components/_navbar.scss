@@ -86,11 +86,18 @@ transition-timing-function: linear;
   border-top: 1px solid #E6E6E6;
 }
 input#search {
-  border-radius:25px;
-  margin: 20px;
-}
-input#search:focus {
+  border: none;
+  border-radius: 8px;
+  padding: 5px 0 5px 20px;
+  color: $mid-gray;
+  font-weight: lighter;
+  &:focus {
     outline:none;
+  }
+  &::placeholder {
+    color: $light-gray;
+    font-weight: lighter;
+  }
 }
 #button-navbar {
   background-color: $blue;
