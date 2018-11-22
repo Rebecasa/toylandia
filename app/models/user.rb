@@ -5,4 +5,5 @@ class User < ApplicationRecord
   # Will delete foreign_keys related to user when deleting user
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+  mount_uploader :photo, PhotoUploader
 end
