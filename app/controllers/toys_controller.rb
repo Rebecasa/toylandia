@@ -6,7 +6,6 @@ class ToysController < ApplicationController
     # Toys for the authorization
     @toys = policy_scope(Toy).order(created_at: :desc)
     authorize @toys
-
     # Toys to show on the map
     @toysmap = Toy.where.not(latitude: nil, longitude: nil)
 
@@ -17,17 +16,24 @@ class ToysController < ApplicationController
         infoWindow: { content: render_to_string(partial: "/toys/map_window", locals: { toy: toy }) }
       }
     end
-  end
-
+    # Search filter
     if !(params[:search]).nil?
       @toy = Toy.where("#{:name} ||#{:category}|| #{:location} ilike ?", "%#{params[:search]}%").take
       if @toy.nil?
         redirect_to toys_path, alert: "doesn't exist"
-        else
-          @toys = Toy.where("#{:name} ||#{:category}|| #{:location} ilike ?", "%#{params[:search]}%")
+      else
+        @toys = Toy.where("#{:name} ||#{:category}|| #{:location} ilike ?", "%#{params[:search]}%")
+        # Changes the markers to only the filtered toys
+        @markers = @toys.map do |toy|
+          {
+            lng: toy.longitude,
+            lat: toy.latitude,
+            infoWindow: { content: render_to_string(partial: "/toys/map_window", locals: { toy: toy }) }
+          }
+        end
       end
     end
-end
+  end
 
   def show
     @toy = Toy.find(params[:id])
