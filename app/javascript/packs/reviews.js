@@ -3,15 +3,19 @@ const reviewForm = document.getElementById("review-form");
 const closeButton = document.getElementById("btn-close");
 
 const showForm = () => {
-  newFormButton.addEventListener("click", (event) => {
-    reviewForm.style.display = "block";
-  });
+  if (newFormButton) {
+    newFormButton.addEventListener("click", (event) => {
+      reviewForm.style.display = "block";
+    });
+  }
 }
 
 const hideForm = () => {
-  closeButton.addEventListener("click", (event) => {
-    reviewForm.style.display = "none";
-  });
+  if (closeButton) {
+    closeButton.addEventListener("click", (event) => {
+      reviewForm.style.display = "none";
+    });
+  }
 }
 
 export { showForm, hideForm };
