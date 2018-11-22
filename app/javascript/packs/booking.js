@@ -2,6 +2,8 @@ const bookingsBtn = document.querySelector(".bookings-btn");
 const bookings = document.getElementById("bookings");
 const rentalsBtn = document.querySelector(".rentals-btn");
 const rentals = document.getElementById("rentals");
+const myToysBtn = document.querySelector(".mytoys-btn");
+const myToys = document.getElementById("mytoys");
 
 if (bookingsBtn) {
   bookingsBtn.addEventListener("click", (event) =>{
@@ -28,6 +30,21 @@ if (rentalsBtn) {
     }
   });
 }
+
+if (myToysBtn) {
+  myToysBtn.addEventListener("click", (event) => {
+    if (myToys.style.display == "none") {
+      myToys.style.display = "block";
+      if (myToys.style.display == "block") {
+        bookings.style.display = "none";
+        rentals.style.display = "none";
+      }
+    } else {
+      myToys.style.display = "none";
+    }
+  });
+}
+
 
 
 
