@@ -2,7 +2,11 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   resources :toys, except: [:destroy]  do
-    resources :bookings, only: [:new, :create]
+    resources :bookings, only: [:new, :create] do
+      resources :chats do
+        resources :messages
+      end
+    end
     resources :reviews, only: [:new, :create]
   end
   resources :bookings, only: [:index, :destroy]
