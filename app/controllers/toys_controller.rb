@@ -45,6 +45,16 @@ class ToysController < ApplicationController
     @toy = Toy.find(params[:id])
     @review = Review.new
     authorize @toy
+
+    # To show the toy on the map
+    @toymap = Toy.where(id: params[:id])
+    @marker = @toymap.map do |toy|
+      {
+        lng: toy.longitude,
+        lat: toy.latitude,
+        infoWindow: { content: render_to_string(partial: "/toys/map_window", locals: { toy: toy }) }
+      }
+    end
   end
 
   def new
