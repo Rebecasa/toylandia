@@ -1,6 +1,5 @@
-
-<h1>Book your toy: </h1>
-<p><%= "#{@toy.price}, per day" %></p>
+<h1 class="text-center">Book your toy: </h1>
+<p class="text-center"><%= number_to_currency(@toy.price, unit: "€", separator: ",", delimiter: ".", format: "%n %u") %> per day</p>
 
 <%= render 'form', booking: @booking, toy: @toy %>
 

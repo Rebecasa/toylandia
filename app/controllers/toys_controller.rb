@@ -16,12 +16,15 @@ class ToysController < ApplicationController
         infoWindow: { content: render_to_string(partial: "/toys/map_window", locals: { toy: toy }) }
       }
     end
-    # Search filter
-    if !(params[:search]).nil?
+
+    # Search function on navbar
+    if !(params[:search]).nil? # checks if params exists
+      # Gets the value from the input and checks on db
       @toy = Toy.where("#{:name} ||#{:category}|| #{:location} ilike ?", "%#{params[:search]}%").take
       if @toy.nil?
         redirect_to toys_path, alert: "doesn't exist"
       else
+        # Selects the toys in the condition
         @toys = Toy.where("#{:name} ||#{:category}|| #{:location} ilike ?", "%#{params[:search]}%")
         # Changes the markers to only the filtered toys
         @markers = @toys.map do |toy|
