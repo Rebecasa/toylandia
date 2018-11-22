@@ -25,9 +25,20 @@ class BookingsController < ApplicationController
         redirect_to bookings_path
       else
         render 'new'
+      end
     end
   end
+
+  def show
+    @toy = Toy.find(params[:toy_id])
+    @booking = Booking.find(params[:id])
+    @message = Message.new
+    # @message.booking = @booking
+    # @booking = policy_scope(Booking)
+
+    authorize @booking
   end
+
 
   def destroy
     @booking = Booking.find(params[:id])
