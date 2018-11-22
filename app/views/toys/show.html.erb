@@ -1,3 +1,4 @@
+
 <div class="container-fluid">
   <div class="toy-container">
     <div class="toy-card">
@@ -13,6 +14,7 @@
           <% end %>
         <% else %>
           <p class="toy-book"><%= link_to "Book this toy", new_toy_booking_path(@toy),class: "button-form"%></p>
+
         <% end %>
         <div class="toy-reviews">
           <h3>Reviews <font size="-1"><i id="new-review" class="fas fa-plus"></i></font></h3>
