@@ -25,9 +25,8 @@
 
     <div class="rentals">
       <h1>Rentals:</h1>
-      <% @bookings.each do |booking| %>
-        <% if booking.toy.user == current_user %>
 
+      <% @rentals.each do |booking| %>
           <div class="each-toy">
             <div class="toy-name">
               <%= cl_image_tag booking.toy.photo, height: 70, crop: :fill %>
@@ -41,8 +40,26 @@
             <%= link_to "Cancel Booking", booking_path(booking), method: :delete, data:
             {confirm: "Are your sure you want to delete the booking for #{booking.toy.name}" }, class: "button-form"  %>
           </div>
-        <% end %>
       <% end %>
+    </div>
+  </div>
+
+
+
+  <div class="cards-container">
+    <!-- The toys cards -->
+    <div class="row">
+      <% @mytoys.each do |toy| %>
+        <div class="col-xs-6 col-md-4">
+          <div class="card" style= "background-image: url(<%= cl_image_path toy.photo, height: 200, crop: :fill %>)">
+            <div class="card-category"><%= toy.category.upcase %></div>
+            <div class="card-price"><%= number_to_currency(toy.price, unit: "€", separator: ",", delimiter: ".", format: "%n %u") %>/day</div>
+            <div class="card-title"><%= toy.name.upcase %></div>
+            <%= link_to '', toy_path(toy), class:'card-link' %>
+          </div>
+        </div>
+      <% end %>
+
     </div>
   </div>
 

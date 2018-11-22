@@ -1,8 +1,9 @@
 class BookingsController < ApplicationController
   def index
-    # @bookings = policy_scope(Booking).order(created_at: :desc)
-     @bookings = policy_scope(Booking).where(user: current_user).order(created_at: :desc)
+    @bookings = policy_scope(Booking).where(user: current_user).order(created_at: :desc)
     authorize @bookings
+    @rentals = policy_scope(Booking).select { |booking| booking.toy.user == current_user }
+    @mytoys = policy_scope(Toy).select { |toy| toy.user == current_user }
   end
 
   def new
