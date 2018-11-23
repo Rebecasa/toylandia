@@ -9,6 +9,11 @@
   margin: 10px;
 }
 
+.new-review {
+  cursor: pointer;
+  color: $blue;
+}
+
 .each-mytoy {
   display:flex;
   justify-content: space-evenly;
