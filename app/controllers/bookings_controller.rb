@@ -4,6 +4,7 @@ class BookingsController < ApplicationController
     authorize @bookings
     @rentals = policy_scope(Booking).select { |booking| booking.toy.user == current_user }
     @mytoys = policy_scope(Toy).select { |toy| toy.user == current_user }
+    @review = Review.new
   end
 
   def show

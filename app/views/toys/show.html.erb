@@ -17,7 +17,7 @@
 
         <% end %>
         <div class="toy-reviews">
-          <h3>Reviews <font size="-1"><i id="new-review" class="fas fa-plus"></i></font></h3>
+          <h3>Reviews <font size="-1"><i class="new-review fas fa-plus"></i></font></h3>
           <ul class="list-unstyled">
             <% @toy.reviews.each do |review| %>
               <li>
@@ -43,8 +43,8 @@
     </div>
   </div>
   </div>
-    <div id="review-form" style="display: none;">
-      <div id="btn-close">x</div>
+    <div class="review-form" style="display: none;">
+      <div class="btn-close">x</div>
       <%= render 'reviews/form', toy: @toy, review: @review  %>
     </div>
   </div>
