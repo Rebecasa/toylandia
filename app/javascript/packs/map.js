@@ -12,13 +12,28 @@ if (mapElement) {
   // Adding the markers
   const markers = JSON.parse(mapElement.dataset.markers);
 
+  const toyImg = document.querySelector(".card");
+  const toyImages = document.querySelectorAll(".card");
+
   markers.forEach((marker) => {
-    new mapboxgl.Marker()
+    let el = document.createElement('div');
+    el.className = 'marker';
+    el.style.backgroundImage = toyImages.style["backgroundImage"];
+    el.style.width = '30px';
+    el.style.height = '30px';
+    el.style.backgroundSize = "cover";
+
+    el.addEventListener('click', function() {
+        window.alert(marker.properties.message);
+    });
+
+    new mapboxgl.Marker(el)
       .setLngLat([marker.lng, marker.lat])
       .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
       .setHTML(marker.infoWindow.content))
       .addTo(map);
-  })
+  });
+
 // To set the zoom level
   if (markers.length === 0) {
     map.setZoom(1);
