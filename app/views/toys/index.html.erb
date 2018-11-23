@@ -1,9 +1,8 @@
-<!-- <h1 class="text-center"><u>All our toys available</u></h1> -->
+<u><h1 class="text-center h1-index">Rent one of these toys!</h1></u>
 <br>
 <div class="container-fluid">
   <div class="toys-index-wrapper">
     <div class="cards-container">
-      <!-- The toys cards -->
       <div class="row">
         <% @toys.each do |toy| %>
         <div class="col-xs-6 col-md-4">
@@ -17,7 +16,6 @@
         <% end %>
       </div>
     </div>
-    <!-- The map -->
 
     <div class="row col-xs-12 col-md-4">
       <div class="map-container">
@@ -27,10 +25,9 @@
   </div>
 </div>
 
-<!-- The button -->
 <div class="container" id="button-container">
   <% if user_signed_in? %>
-    <%= link_to 'add a new toy', new_toy_path, class:'button-form' %>
+    <%= link_to 'Rent your toy!', new_toy_path, class:'button-form' %>
   <% end %>
 </div>
 
