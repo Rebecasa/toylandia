@@ -12,13 +12,14 @@ if (mapElement) {
   // Adding the markers
   const markers = JSON.parse(mapElement.dataset.markers);
 
-  const toyImg = document.querySelector(".card");
   const toyImages = document.querySelectorAll(".card");
+  let i = 0;
 
   markers.forEach((marker) => {
     let el = document.createElement('div');
     el.className = 'marker';
-    el.style.backgroundImage = toyImages.style["backgroundImage"];
+    el.style.backgroundImage = toyImages[i].style["backgroundImage"];
+    i += 1;
     el.style.width = '30px';
     el.style.height = '30px';
     el.style.backgroundSize = "cover";
