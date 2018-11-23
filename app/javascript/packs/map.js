@@ -12,13 +12,49 @@ if (mapElement) {
   // Adding the markers
   const markers = JSON.parse(mapElement.dataset.markers);
 
+  const toyImages = document.querySelectorAll(".card");
+  let i = 0;
+
   markers.forEach((marker) => {
-    new mapboxgl.Marker()
-      .setLngLat([marker.lng, marker.lat])
-      .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
-      .setHTML(marker.infoWindow.content))
-      .addTo(map);
-  })
+    if (toyImages.length !== 0) {
+      let el = document.createElement('div');
+      el.className = 'marker';
+      el.style.backgroundImage = toyImages[i].style["backgroundImage"];
+      i += 1;
+      el.style.width = '30px';
+      el.style.height = '30px';
+      el.style.backgroundSize = "cover";
+
+      el.addEventListener('click', function() {
+          window.alert(marker.properties.message);
+      });
+
+      new mapboxgl.Marker(el)
+        .setLngLat([marker.lng, marker.lat])
+        .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
+        .setHTML(marker.infoWindow.content))
+        .addTo(map);
+    } else {
+      const toyImage = document.querySelector(".toy-photo")["src"];
+      let el = document.createElement('div');
+      el.className = 'marker';
+      el.style.backgroundImage = `url(${toyImage})`;
+      el.style.width = '50px';
+      el.style.height = '50px';
+      el.style.backgroundSize = "cover";
+
+      el.addEventListener('click', function() {
+          window.alert(marker.properties.message);
+      });
+
+      new mapboxgl.Marker(el)
+        .setLngLat([marker.lng, marker.lat])
+        .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
+        .setHTML(marker.infoWindow.content))
+        .addTo(map);
+    }
+  });
+
 // To set the zoom level
   if (markers.length === 0) {
     map.setZoom(1);

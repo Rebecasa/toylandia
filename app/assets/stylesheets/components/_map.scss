@@ -14,9 +14,26 @@
 .mapboxgl-popup-content {
   text-align: center;
   font-family: 'Open Sans', sans-serif;
+  background-color: $yellow;
+  a {
+    color: $gray;
+    text-decoration: none;
+    &:hover {
+      text-decoration: none;
+      color: $mid-gray;
+    }
+  }
 }
 
 .popup {
   width: 80px;
   height: auto;
+}
+
+.marker {
+  display: block;
+  border: 1px solid $blue;
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 0;
 }

@@ -16,7 +16,8 @@ class ToysController < ApplicationController
       {
         lng: toy.longitude,
         lat: toy.latitude,
-        infoWindow: { content: render_to_string(partial: "/toys/map_window", locals: { toy: toy }) }
+        infoWindow: { content: view_context.link_to(render_to_string(
+          partial: "/toys/map_window", locals: { toy: toy } ), toy_path(toy)) }
       }
     end
 
@@ -34,7 +35,8 @@ class ToysController < ApplicationController
           {
             lng: toy.longitude,
             lat: toy.latitude,
-            infoWindow: { content: render_to_string(partial: "/toys/map_window", locals: { toy: toy }) }
+            infoWindow: { content: view_context.link_to(render_to_string(
+              partial: "/toys/map_window", locals: { toy: toy } ), toy_path(toy)) }
           }
         end
       end
