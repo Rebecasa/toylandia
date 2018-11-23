@@ -17,7 +17,11 @@
 
         <% end %>
         <div class="toy-reviews">
-          <h3>Reviews <font size="-1"><i class="new-review fas fa-plus"></i></font></h3>
+          <h3>Reviews
+            <% if current_user %>
+              <font size="-1"><i class="new-review fas fa-plus"></i></font>
+            <% end %>
+            </h3>
           <ul class="list-unstyled">
             <% @toy.reviews.each do |review| %>
               <li>

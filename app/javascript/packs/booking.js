@@ -11,6 +11,7 @@ if (bookingsBtn) {
      bookings.style.display = "block";
       if ( bookings.style.display == "block" ){
       rentals.style.display = "none";
+      myToys.style.display = "none";
       }
     } else {
    bookings.style.display = "none";
@@ -24,6 +25,7 @@ if (rentalsBtn) {
      rentals.style.display = "block";
       if (rentals.style.display == "block" ){
       bookings.style.display = "none";
+      myToys.style.display = "none";
       }
     } else {
    rentals.style.display = "none";
