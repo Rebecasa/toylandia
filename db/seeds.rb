@@ -40,7 +40,7 @@ hulk = Toy.new(user: bunny, name: 'hulk', description: 'Sometimes hulk get angry
 hulk.remote_photo_url = 'https://res.cloudinary.com/blueolive/image/upload/v1542794703/photo-1542623024-a797a755b8d0.jpg'
 hulk.save!
 
-monkey = Toy.new(user: bala, name: 'maurice', description: 'Maurice is often sad but give it a snuggle and it will warm up your heart.', location: 'Barcelona', price: 7, category:'cuddly')
+monkey = Toy.new(user: bala, name: 'maurice', description: 'Maurice is often sad but give it a snuggle and it will warm up your heart. Monkeys are very nice creatures, especially when they are plushtoys.', location: 'Barcelona', price: 7, category:'cuddly')
 monkey.remote_photo_url = 'https://res.cloudinary.com/blueolive/image/upload/v1542794703/photo-1517686748843-bb360cfc62b3.jpg'
 monkey.save!
 
