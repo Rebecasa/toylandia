@@ -1,12 +1,15 @@
-// Here you generate *JavaScript* that would be executed in the browser
 function refreshForm(innerHTML) {
   const newMessageForm = document.getElementById('new_message');
-  newMessageForm.innerHTML = innerHTML;
+  if (newMessageForm) {
+    newMessageForm.innerHTML = innerHTML;
+  }
 }
 
 function addMessage(messageHTML) {
   const messages = document.getElementById('messages');
-  messages.insertAdjacentHTML('beforeend', messageHTML);
+  if (messages) {
+    messages.insertAdjacentHTML('beforeend', messageHTML);
+  }
 }
 
 <% if @message.errors.any? %>
