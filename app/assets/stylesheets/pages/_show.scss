@@ -1,19 +1,19 @@
 #show-toy-fluid.container-fluid {
   display: flex;
   justify-content: center;
-}
+      padding-left: 145px;
+    padding-right: 145px;
 
+}
 .toy-container {
   display: flex;
   flex-direction: column;
   background: white;
-  border-radius: 15px;
+  border-radius: 6px;
   box-shadow: 3px 3px 28px rgba(0, 0, 0, 0.2);
-  max-width: 60vw;
-  min-height: 50vh;
-  max-height: calc(100vh - 90px);
-  margin-top: 40px;
-  overflow: scroll;
+  max-width: fit-content;
+  max-height: fit-content;
+  min-width: -webkit-fill-available;
 }
 
 .toy-card {

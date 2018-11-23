@@ -17,10 +17,6 @@
     box-shadow: 1px 1px 1px $shadow;
     margin: 10px;
   }
-   .date{
-    font-weight: bolder;
-    font-size: 18px;
-   }
    .name{
     font-weight: bolder;
     font-size: 18px;
@@ -31,6 +27,9 @@
       border: 1px solid #ccc;
       background-color: #f1f1f1;
 
+  }
+  .avatar{
+    border-radius: 50%;
   }
 
 
