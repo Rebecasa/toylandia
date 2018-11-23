@@ -19,13 +19,13 @@
         </div>
         <div class="text-center">
           <div>
-            <%= link_to "Cancel Booking", booking_path(booking),
+            <%=  link_to " Cancel Booking", booking_path(booking), class: "far fa-trash-alt",
             method: :delete,
-            data: { confirm: "Are your sure you want to delete the booking for #{booking.toy.name}" } %>
+            data: { confirm: "Are your sure you want to delete the booking for #{booking.toy.name}"} %>
           </div>
-          <p class="new-review">Leave a Review</p>
+          <p class="new-review far fa-edit">  Leave a Review</p>
           <div>
-            <%= link_to "Chat", toy_booking_path(booking.toy_id, booking), class: "button-form"  %>
+            <%= link_to " Chat ", toy_booking_path(booking.toy_id, booking), class: "far fa-comments"  %>
           </div>
         </div>
         <div class="review-form" style="display: none;">
@@ -44,12 +44,13 @@
           <%= link_to (cl_image_tag booking.toy.photo, height: 70, crop: :fill),toy_path(booking.toy)  %>
         </div>
         <div class="toy-date-price">
-          <p class= "date"><%= " #{booking.start_date.strftime('%e/%m/%Y')}  - #{booking.end_date.strftime('%e/%m/%Y')}" %></p>
+          <p><%= "Your toy will be with: #{booking.toy.user.username}, during: " %></p>
+          <p ><%= " #{booking.start_date.strftime('%e/%m/%Y')}  - #{booking.end_date.strftime('%e/%m/%Y')}" %></p>
           <% price = (booking.end_date - booking.start_date + 1).to_i * booking.toy.price.to_i %>
           <p><%= number_to_currency(price, unit: "€", separator: ",", delimiter: ".", format: "%n %u") %></p>
         </div>
-        <%= link_to "Cancel Booking", booking_path(booking), method: :delete, data:
-        {confirm: "Are your sure you want to delete the booking for #{booking.toy.name}" }, class: "button-form"  %>
+        <%= link_to " Cancel Booking", booking_path(booking), method: :delete, data:
+        {confirm: "Are your sure you want to delete the booking for #{booking.toy.name}" }, class: "far fa-trash-alt"  %>
       </div>
     <% end %>
   </div>
