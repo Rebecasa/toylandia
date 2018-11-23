@@ -25,7 +25,7 @@ class ToysController < ApplicationController
       # Gets the value from the input and checks on db
       @toy = Toy.where("#{:name} ||#{:category}|| #{:location} ilike ?", "%#{params[:search]}%").take
       if @toy.nil?
-        redirect_to toys_path, alert: "doesn't exist"
+        redirect_to toys_path, alert: "This toy doesn't exist"
       else
         # Selects the toys in the condition
         @toys = Toy.where("#{:name} ||#{:category}|| #{:location} ilike ?", "%#{params[:search]}%")

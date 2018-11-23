@@ -10,9 +10,7 @@
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_pack_tag 'application' %>
-    <!-- Browser icon -->
     <%= favicon_link_tag asset_path('logo.png') %>
-    <!-- Styling for the map -->
     <%= stylesheet_pack_tag "map" %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
   </head>
@@ -23,7 +21,6 @@
     <%= render '/partials/footer' %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
-    <!-- For the map -->
     <%= javascript_pack_tag "map" %>
   </body>
 </html>

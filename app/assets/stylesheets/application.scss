@@ -27,8 +27,7 @@ body {
   font-family: 'PT Sans', sans-serif;
   min-height: 100vh;
   justify-content: space-around;
-  background-color: #f3f4eb; //warmer version
-  background-color: $background; //colder version //Default
+  background-color: $background;
   background-size: cover;
   background-position: top center;
   background-repeat: no-repeat;
