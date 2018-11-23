@@ -5,17 +5,17 @@ User.destroy_all
 puts 'Creating adorable stuff...'
 
 # Users
-bala = User.new( email: 'balatheballerina@dogs.com', password: '123456789')
+bala = User.new( email: 'balatheballerina@dogs.com', password: '123456789', username: "Bala")
 bala.remote_photo_url = 'https://res.cloudinary.com/blueolive/image/upload/v1542899427/ad893707-7999-4e6e-96ac-6ad81fa95327.jpg'
 bala.save!
 
-bunny = User.new( email: 'bunnythedoghater@dogs.com', password: '123456789')
-bunny.remote_photo_url = 'https://res.cloudinary.com/blueolive/image/upload/v1542901161/download.png'
+bunny = User.new( email: 'bunnythedoghater@dogs.com', password: '123456789', username: "Bunny")
+bunny.remote_photo_url = 'https://res.cloudinary.com/blueolive/image/upload/v1542900942/img_avatar2.png'
 bunny.save!
 
-bugsbunny = User.new( email: 'bugsbunny@rabbits.com', password: '123456789')
-bugsbunny.remote_photo_url = 'https://res.cloudinary.com/blueolive/image/upload/v1542900942/img_avatar2.png'
-bugsbunny.save!
+jadwiga = User.new( email: 'jadwiga@coumert.com', password: 'jadwiga', username: "Jadwiga")
+jadwiga.remote_photo_url = 'https://res.cloudinary.com/blueolive/image/upload/v1542901161/download.png'
+jadwiga.save!
 
 # Toys
 lapinou = Toy.new(user: bunny, name: 'lapinou', description: 'Lapinou is a very cuddly plushtoy. You can snuggle with it all night and rub your nose into its cute little ears', location: 'Munich', price: 5, category:'cuddly')
@@ -38,11 +38,11 @@ conejito = Toy.new(user: bala, name: 'conejito', description: 'Lorem ipsum dolor
 conejito.remote_photo_url = 'https://res.cloudinary.com/blueolive/image/upload/v1542719181/-.jpg'
 conejito.save!
 
-chucky = Toy.new(user: bugsbunny, name: 'chucky', description: 'Chucky is an adorable doll. At night, it likes to glimb in your bed and look at you while you sleep.', location: 'Angoulême', price: 15, category:'creepy')
+chucky = Toy.new(user: jadwiga, name: 'chucky', description: 'Chucky is an adorable doll. At night, it likes to glimb in your bed and look at you while you sleep.', location: 'Angoulême', price: 15, category:'creepy')
 chucky.remote_photo_url = 'https://res.cloudinary.com/blueolive/image/upload/v1542794703/photo-1510130113467-e63a1970b95c.jpg'
 chucky.save!
 
-sloncek = Toy.new(user: bugsbunny, name: 'slonček jakonček', description: 'Vroom vroom vroom vroom vroom vroom vroom vroom vroom.', location: 'Ljubljana', price: 8.50, category:'cars')
+sloncek = Toy.new(user: jadwiga, name: 'slonček jakonček', description: 'Vroom vroom vroom vroom vroom vroom vroom vroom vroom.', location: 'Ljubljana', price: 8.50, category:'cars')
 sloncek.remote_photo_url = 'https://res.cloudinary.com/blueolive/image/upload/v1542794703/photo-1508896694512-1eade558679c.jpg'
 sloncek.save!
 

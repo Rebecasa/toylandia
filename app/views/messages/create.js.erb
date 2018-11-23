@@ -1,0 +1,17 @@
+// Here you generate *JavaScript* that would be executed in the browser
+function refreshForm(innerHTML) {
+  const newMessageForm = document.getElementById('new_message');
+  newMessageForm.innerHTML = innerHTML;
+}
+
+function addMessage(messageHTML) {
+  const messages = document.getElementById('messages');
+  messages.insertAdjacentHTML('beforeend', messageHTML);
+}
+
+<% if @message.errors.any? %>
+  refreshForm('<%= j render "messages/form", booking: @booking, message: @message %>');
+<% else %>
+  addMessage('<%= j render "messages/show", message: @message %>');
+  refreshForm('<%= j render "messages/form", booking: @booking, message: Message.new %>');
+<% end %>

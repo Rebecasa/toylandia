@@ -39,6 +39,7 @@
             </div>
             <%= link_to "Cancel Booking", booking_path(booking), method: :delete, data:
             {confirm: "Are your sure you want to delete the booking for #{booking.toy.name}" }, class: "button-form"  %>
+            <%= link_to "Chat", toy_booking_path(booking.toy_id, booking), class: "button-form"  %>
           </div>
       <% end %>
     </div>

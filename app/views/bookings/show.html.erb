@@ -1,7 +1,13 @@
 <div class="bookings text-center">
   <h1>Booking:</h1>
+  <div class="messages-container" id="messages">
+    <% @booking.messages.each do |message| %>
+      <% if  message.user == current_user %>
+        <p class= "current-user-message"><%= message.content %> <%= message.user.username %></p>
+      <% else %>
+        <p  class= "other-user-message"><%= message.content %> <%= message.user.username %></p>
+      <% end %>
+    <% end %>
+  </div>
   <%= render 'messages/form', booking: @booking, message: @message %>
-  <% @booking.user.messages.each do |message| %>
-  <p><%= message.content %> - Your message </p>
-  <% end %>
 </div>

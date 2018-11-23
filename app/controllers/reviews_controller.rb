@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-   def new
+  def new
     @toy = Toy.find(params[:toy_id])
     @review = Review.new
     @review.toy = @toy
@@ -17,7 +17,6 @@ class ReviewsController < ApplicationController
       render 'new'
     end
   end
-
 
   private
 
