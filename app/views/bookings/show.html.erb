@@ -1,13 +1,27 @@
-<div class="bookings text-center">
-  <h1>Booking:</h1>
-  <div class="messages-container" id="messages">
-    <% @booking.messages.each do |message| %>
-      <% if  message.user == current_user %>
-        <p class= "current-user-message"><%= message.content %> <%= message.user.username %></p>
-      <% else %>
-        <p  class= "other-user-message"><%= message.content %> <%= message.user.username %></p>
+<div class="bookings">
+  <h1 class="text-center">Your Booking chat:</h1>
+  <div id="chat-container">
+    <div class="messages-container col-xs-12 col-sm-4 col-sm-offset-4" id="messages">
+      <% @booking.messages.each do |message| %>
+        <div class="bubble">
+          <% if message.user  == current_user %>
+          <div class="sms text-left">
+            <%= cl_image_tag message.user.photo, class: 'avatar 1' %>
+            <p class= "current-user-message"><%= message.content %> <%= message.user.username %></p>
+          </div>
+          <% end %>
+        </div>
+        <div class="blue-bubble">
+          <% if message.user  != current_user %>
+          <div class="sms text-right">
+            <%= cl_image_tag message.user.photo, class: 'avatar 2' %>
+            <p class= "other-user-message"><%= message.content %> <%= message.user.username %></p>
+          </div>
+          <% end %>
+        </div>
       <% end %>
-    <% end %>
+    <%= render 'messages/form', booking: @booking, message: @message %>
+    </div>
   </div>
-  <%= render 'messages/form', booking: @booking, message: @message %>
 </div>
+
