@@ -91,3 +91,34 @@
    .toy-date-price{
     text-align: center;
    }
+   .hidden-md{
+    display:none;
+   }
+
+  @media (max-width: 991px) {
+      #bookings {
+        margin: auto;
+      }
+
+      #rentals {
+        margin: auto;
+      }
+      #mytoys {
+        margin: auto;
+      }
+
+    .btn-booking{
+      height: max-content;
+    }
+    .each-toy{
+      width: 310px;
+      margin-top: -20px;
+      margin-left: -16px;
+    }
+    .hidden-md {
+      text-align:center;
+      display:block;
+    }
+
+
+  }
