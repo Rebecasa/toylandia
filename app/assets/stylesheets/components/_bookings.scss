@@ -4,7 +4,7 @@
   justify-content: space-evenly;
   padding: 20px;
   background-color: white;
-  border-radius: 10px;
+  border-radius: 6px;
   box-shadow: 1px 1px 1px $shadow;
   margin: 10px;
 }
@@ -14,17 +14,21 @@
   justify-content: space-evenly;
   padding: 20px;
   background-color: $blue;
-  border-radius: 10px;
+  border-radius: 6px;
   box-shadow: 1px 1px 1px $shadow;
   margin: 10px;
 }
 
-.date {
+.name {
   font-weight: bolder;
   font-size: 18px;
+ }
+
+.avatar {
+  border-radius: 50%;
 }
 
-.name{
+.date {
   font-weight: bolder;
   font-size: 18px;
 }
