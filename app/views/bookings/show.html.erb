@@ -1,0 +1,7 @@
+<div class="bookings text-center">
+  <h1>Booking:</h1>
+  <%= render 'messages/form', booking: @booking, message: @message %>
+  <% @booking.user.messages.each do |message| %>
+  <p><%= message.content %> - Your message </p>
+  <% end %>
+</div>
