@@ -1,10 +1,10 @@
 .toys-index-wrapper {
   display: flex;
-  flex-wrap: wrap;
 }
 
 .cards-container {
   flex: 0 0 70%;
+  margin-right: 37px;
 }
 
 .map-container {
@@ -12,12 +12,16 @@
   width: auto;
 }
 
-@media (max-width: 1600px) {
+@media (max-width: 800px) {
   .cards-container {
     flex: 1 1 100%;
   }
   .map-container {
     flex: 1 1 100%;
     width: auto;
+  }
+  .toys-index-wrapper {
+    display: flex;
+    flex-wrap: wrap;
   }
 }
