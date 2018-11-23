@@ -1,6 +1,6 @@
-const newFormButton = document.getElementById("new-review");
-const reviewForm = document.getElementById("review-form");
-const closeButton = document.getElementById("btn-close");
+const newFormButton = document.querySelector(".new-review");
+const reviewForm = document.querySelector(".review-form");
+const closeButton = document.querySelector(".btn-close");
 
 const showForm = () => {
   if (newFormButton) {
