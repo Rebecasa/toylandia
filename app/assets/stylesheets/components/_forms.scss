@@ -24,4 +24,67 @@
   border-radius: 10px;
   border: 1px solid $blue;
 }
+//chat
+div#chat-container{
+    // width: 50%;
+    // -webkit-align-content: center;
+    // display: inline-block;
+}
+div.bookings.text-center {
 
+}
+
+p.current-user-message {
+background-color: $blue;
+border-radius: 5px;
+padding: 6px;
+word-break: break-all;
+text-align: right;
+position: relative;
+top: -7px;
+padding: 10px;
+z-index: -1;
+}
+p.other-user-message {
+text-align: left;
+word-break: break-all;
+background-color: $yellow;
+border-radius: 5px;
+padding: 6px;
+position: relative;
+top: -7px;
+padding: 10px;
+z-index: -1;
+}
+
+.bubble {
+      overflow-wrap: break-word;
+          display: flex;
+    flex-direction: column;
+}
+.sms {
+    width: 100%;
+}
+.text-right {
+  text-align: right;
+}
+.text-left {
+  text-align: left;
+}
+.avatar {
+height: 30px;
+width: 30px;
+border-radius: 50%;
+}
+.avatar.1 {
+      float: right;
+    margin: 18px;
+    margin-right: 32px;
+    position: absolute;
+}
+.avatar.2 {
+  position: absolute;
+      float: left;
+    margin: 18px;
+    margin-right: 32px;
+}

@@ -1,8 +1,6 @@
-<div style="width: 400px; margin: 0 auto;">
-
+<div>
     <%= simple_form_for([@booking, @booking.messages.new], id: 'new_message', remote: true, :method => :post) do |f| %>
-
-      <%= f.input :content, as: :text, label: :'Your message' %>
+      <%= f.input :content, as: :text , label: false%>
       <%= f.submit class: "button-form" %>
     <% end %>
 </div>
